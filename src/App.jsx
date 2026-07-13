@@ -1,6 +1,7 @@
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './sections/Hero/Hero.jsx';
+import About from './sections/About/About.jsx';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Navbar />
         <main className="pt-16">
           <Hero />
+          <About />
         </main>
       </div>
     </ThemeProvider>
