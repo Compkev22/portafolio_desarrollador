@@ -2,6 +2,8 @@ import { ThemeProvider } from './context/ThemeContext.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './sections/Hero/Hero.jsx';
 import About from './sections/About/About.jsx';
+import Skills from './sections/Skills/Skills.jsx';
+import Education from './sections/Education/Education.jsx';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
         <main className="pt-16">
           <Hero />
           <About />
+          <Skills />
+          <Education />
         </main>
       </div>
     </ThemeProvider>

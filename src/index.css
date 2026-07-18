@@ -1,14 +1,61 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-label: 'Geist', system-ui, sans-serif;
+
+  --color-primary: #7c3aed;
+  --color-primary-bright: #a970ff;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #be0062;
+  --color-secondary-bright: #e64d86;
+  --color-on-secondary: #ffffff;
+
+  --color-surface: #ffffff;
+  --color-surface-container: #f4f2f7;
+  --color-surface-container-high: #ece8f2;
+  --color-on-surface: #1d1b20;
+  --color-on-surface-variant: #4a4455;
+  --color-outline: #79747e;
+}
+
+.dark {
+  --color-primary: #d2bbff;
+  --color-primary-bright: #d2bbff;
+  --color-on-primary: #3f008e;
+
+  --color-secondary: #ffb1c7;
+  --color-secondary-bright: #ffb1c7;
+  --color-on-secondary: #650031;
+
+  --color-surface: #101415;
+  --color-surface-container: #1d2022;
+  --color-surface-container-high: #272a2c;
+  --color-on-surface: #e0e3e5;
+  --color-on-surface-variant: #ccc3d8;
+  --color-outline: #958da1;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-label {
+  font-family: var(--font-label);
+  letter-spacing: 0.05em;
 }
