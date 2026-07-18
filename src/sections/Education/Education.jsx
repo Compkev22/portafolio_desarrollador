@@ -35,45 +35,64 @@ const timeline = [
 export default function Education() {
   return (
     <section id="education" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+          className="text-3xl md:text-4xl font-bold text-center mb-16 text-on-surface"
         >
           Educación y experiencia
         </motion.h2>
 
-        <div className="relative pl-10">
-          <div className="absolute left-4 top-2 bottom-2 w-px bg-gray-200 dark:bg-gray-700" />
+        <div className="relative">
+          {/* Línea central (desktop) */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-outline/20" />
+          {/* Línea lateral (mobile) */}
+          <div className="md:hidden absolute left-5 top-2 bottom-2 w-px bg-outline/20" />
 
-          <div className="space-y-10">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={item.titulo}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="relative"
-              >
-                <div className="absolute -left-10 top-1 w-8 h-8 rounded-full bg-blue-600 dark:bg-blue-400 flex items-center justify-center">
-                  <item.icon className="text-white dark:text-gray-900" size={16} />
+          <div className="space-y-12 md:space-y-16">
+            {timeline.map((item, i) => {
+              const isEven = i % 2 === 0;
+
+              const card = (
+                <div className="bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-6">
+                  <span className="inline-block font-label text-xs px-3 py-1 rounded-full bg-primary/10 text-primary mb-2">
+                    {item.periodo}
+                  </span>
+                  <h3 className="text-lg font-bold text-on-surface">{item.titulo}</h3>
+                  <p className="text-on-surface-variant mt-1">{item.detalle}</p>
                 </div>
+              );
 
-                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                  {item.periodo}
-                </span>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1">
-                  {item.titulo}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mt-1">
-                  {item.detalle}
-                </p>
-              </motion.div>
-            ))}
+              return (
+                <motion.div
+                  key={item.titulo}
+                  initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  className="relative pl-14 md:pl-0 md:grid md:grid-cols-[1fr_3.5rem_1fr] md:gap-6 md:items-center"
+                >
+                  {/* Slot izquierdo (desktop) */}
+                  <div className="hidden md:block">{isEven && card}</div>
+
+                  {/* Ícono centrado en la línea */}
+                  <div className="absolute left-0 top-0 md:static md:flex md:justify-center">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center shadow-[0_0_16px_rgba(124,58,237,0.4)]">
+                      <item.icon className="text-on-primary" size={18} />
+                    </div>
+                  </div>
+
+                  {/* Card en mobile (siempre visible) */}
+                  <div className="md:hidden">{card}</div>
+
+                  {/* Slot derecho (desktop) */}
+                  <div className="hidden md:block">{!isEven && card}</div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

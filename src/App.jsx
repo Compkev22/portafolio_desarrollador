@@ -4,6 +4,7 @@ import Hero from './sections/Hero/Hero.jsx';
 import About from './sections/About/About.jsx';
 import Skills from './sections/Skills/Skills.jsx';
 import Education from './sections/Education/Education.jsx';
+import Projects from './sections/Projects/Projects.jsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <About />
           <Skills />
           <Education />
+          <Projects />
         </main>
       </div>
     </ThemeProvider>
