@@ -20,7 +20,7 @@ export const projects = [
     id: 'kinal-bank',
     title: 'Kinal Bank',
     description:
-      'Sistema bancario para administrar cuentas, tarjetas y clientes.',
+      'Sistema bancario para administrar cuentas, tarjetas y clientes, con un panel para consultar saldos y movimientos, generar tarjetas asociadas a cada cuenta y gestionar la información de los usuarios de forma segura.',
     technologies: ['Node.js', 'Express', 'React', 'React Native', 'PostgreSQL', 'MongoDB'],
     images: [loginBanco, cuentasBanco, tarjetasBanco],
     repoUrl: 'https://github.com/orgs/KinalBank/repositories',
