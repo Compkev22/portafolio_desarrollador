@@ -1,7 +1,36 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../../assets/images/profile.png';
 
+const roles = ['Desarrollador Full Stack', 'Desarrollador Frontend', 'Desarrollador Backend'];
+
+function useTypewriter(words, typingSpeed = 80, deletingSpeed = 40, pauseTime = 1500) {
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (!deleting && subIndex === words[index].length) {
+      const timeout = setTimeout(() => setDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+    if (deleting && subIndex === 0) {
+      setDeleting(false);
+      setIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (deleting ? -1 : 1));
+    }, deleting ? deletingSpeed : typingSpeed);
+    return () => clearTimeout(timeout);
+  }, [subIndex, deleting, index, words]);
+
+  return words[index].substring(0, subIndex);
+}
+
 export default function Hero() {
+  const text = useTypewriter(roles);
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
       {/* Blobs orgánicos de fondo */}
@@ -41,7 +70,8 @@ export default function Hero() {
           </h1>
 
           <h2 className="text-3xl md:text-4xl font-bold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-            Desarrollador Full Stack
+            {text}
+            <span className="border-r-2 border-primary animate-pulse ml-1" />
           </h2>
 
           <p className="mt-6 text-lg text-on-surface-variant max-w-lg border-l-4 border-primary pl-4">
@@ -51,13 +81,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a
               href="#projects"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-semibold transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.4)]"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-semibold transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.4),6px_6px_16px_rgba(0,0,0,0.15),-6px_-6px_16px_rgba(255,255,255,0.05)] dark:shadow-[0_0_20px_rgba(124,58,237,0.4),6px_6px_16px_rgba(0,0,0,0.5),-6px_-6px_16px_rgba(255,255,255,0.03)]"
             >
               Ver Proyectos
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 rounded-full bg-surface-container-high border border-outline text-on-surface font-semibold transition-all duration-300 hover:bg-surface-container-high/80 hover:scale-105"
+              className="px-8 py-3 rounded-full bg-surface-container-high border border-outline text-on-surface font-semibold transition-all duration-300 hover:bg-surface-container-high/80 hover:scale-105 shadow-[6px_6px_16px_rgba(0,0,0,0.15),-6px_-6px_16px_rgba(255,255,255,0.05)] dark:shadow-[6px_6px_16px_rgba(0,0,0,0.5),-6px_-6px_16px_rgba(255,255,255,0.03)]"
             >
               Contactarme
             </a>
