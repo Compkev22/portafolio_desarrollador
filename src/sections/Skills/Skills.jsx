@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FiChevronDown } from 'react-icons/fi';
 import {
   SiReact, SiJavascript, SiTailwindcss,
   SiSpring, SiNodedotjs, SiExpress,
@@ -47,16 +49,26 @@ const categorias = [
 ];
 
 function FilaSkill({ name, pct, icon: Icon, desc }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="group/skill rounded-lg p-3 transition-colors duration-300 hover:bg-surface-container-high/50">
+    <button
+      type="button"
+      onClick={() => setOpen((o) => !o)}
+      className="group/skill w-full text-left rounded-lg p-3 transition-colors duration-300 hover:bg-surface-container-high/50 cursor-pointer"
+    >
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0">
           <Icon className="text-primary" size={16} />
         </div>
         <span className="text-sm font-medium text-on-surface flex-1">{name}</span>
+        <FiChevronDown
+          size={16}
+          className={`text-on-surface-variant transition-transform duration-300 ${open ? 'rotate-180' : ''} md:group-hover/skill:rotate-180`}
+        />
       </div>
 
-      <div className="grid grid-rows-[0fr] group-hover/skill:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+      <div className={`grid ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} md:group-hover/skill:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out`}>
         <div className="overflow-hidden">
           <div className="pt-3 pl-11">
             <div className="flex items-center justify-between mb-2">
@@ -72,7 +84,7 @@ function FilaSkill({ name, pct, icon: Icon, desc }) {
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -97,7 +109,7 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-sm text-on-surface-variant text-center mb-12"
         >
-          Pasa el cursor por cada tecnología para conocer cómo la uso.
+          Pasa el cursor o toca cada tecnología para conocer cómo la uso.
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">

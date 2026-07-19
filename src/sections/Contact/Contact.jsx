@@ -85,7 +85,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-8"
+            className="bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-6 md:p-8"
           >
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-3">
               Conectemos
@@ -126,7 +126,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-8"
+            className="bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-6 md:p-8"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
@@ -141,7 +141,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Tu nombre"
-                  className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                  className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-base md:text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
                 />
               </div>
               <div>
@@ -156,7 +156,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="tu@email.com"
-                  className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                  className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-base md:text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
                 />
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="¿De qué trata tu proyecto?"
-                className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow resize-none"
+                className="w-full bg-surface-container-high border border-outline/20 rounded-lg px-4 py-2 text-base md:text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow resize-none"
               />
             </div>
 

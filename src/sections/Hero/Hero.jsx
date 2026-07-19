@@ -66,11 +66,11 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-center md:text-left"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight">
             Kevin Velásquez
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             {text}
             <span className="border-r-2 border-primary animate-pulse ml-1" />
           </h2>

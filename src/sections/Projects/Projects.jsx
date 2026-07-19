@@ -24,7 +24,7 @@ function ProjectCard({ project, index }) {
 
       <ProjectCarousel images={project.images} title={project.title} />
 
-      <div className="p-8 flex flex-col flex-grow relative z-10">
+      <div className="p-6 md:p-8 flex flex-col flex-grow relative z-10">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
             <Icon size={16} />

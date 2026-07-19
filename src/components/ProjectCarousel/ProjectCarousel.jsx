@@ -49,7 +49,7 @@ export default function ProjectCarousel({ images, title }) {
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="absolute -top-4 -right-4 bg-surface-container-high border border-outline/20 text-on-surface rounded-full p-2 hover:bg-surface-container-highest transition-colors"
+          className="absolute -top-4 -right-4 bg-surface-container-high border border-outline/20 text-on-surface rounded-full p-3 hover:bg-surface-container-highest transition-colors"
           aria-label="Cerrar imagen ampliada"
         >
           <FiX size={18} />
@@ -60,7 +60,7 @@ export default function ProjectCarousel({ images, title }) {
             <button
               type="button"
               onClick={goPrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-surface-container-high/80 backdrop-blur border border-outline/20 text-on-surface rounded-full p-2 hover:bg-primary hover:text-on-primary transition-colors"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-surface-container-high/80 backdrop-blur border border-outline/20 text-on-surface rounded-full p-3 hover:bg-primary hover:text-on-primary transition-colors"
               aria-label="Imagen anterior"
             >
               <FiChevronLeft size={20} />
@@ -68,7 +68,7 @@ export default function ProjectCarousel({ images, title }) {
             <button
               type="button"
               onClick={goNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-surface-container-high/80 backdrop-blur border border-outline/20 text-on-surface rounded-full p-2 hover:bg-primary hover:text-on-primary transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-surface-container-high/80 backdrop-blur border border-outline/20 text-on-surface rounded-full p-3 hover:bg-primary hover:text-on-primary transition-colors"
               aria-label="Siguiente imagen"
             >
               <FiChevronRight size={20} />
@@ -108,7 +108,7 @@ export default function ProjectCarousel({ images, title }) {
             <button
               type="button"
               onClick={(e) => { e.stopPropagation(); goPrev(); }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-surface-container-lowest/60 backdrop-blur text-on-surface rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-on-primary"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-surface-container-lowest/60 backdrop-blur text-on-surface rounded-full p-2.5 md:p-1.5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-on-primary"
               aria-label="Imagen anterior"
             >
               <FiChevronLeft size={18} />
@@ -116,7 +116,7 @@ export default function ProjectCarousel({ images, title }) {
             <button
               type="button"
               onClick={(e) => { e.stopPropagation(); goNext(); }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-surface-container-lowest/60 backdrop-blur text-on-surface rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-on-primary"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-surface-container-lowest/60 backdrop-blur text-on-surface rounded-full p-2.5 md:p-1.5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-on-primary"
               aria-label="Siguiente imagen"
             >
               <FiChevronRight size={18} />
