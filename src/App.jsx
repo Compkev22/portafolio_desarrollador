@@ -5,6 +5,7 @@ import About from './sections/About/About.jsx';
 import Skills from './sections/Skills/Skills.jsx';
 import Education from './sections/Education/Education.jsx';
 import Projects from './sections/Projects/Projects.jsx';
+import Contact from './sections/Contact/Contact.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Skills />
           <Education />
           <Projects />
+          <Contact />
         </main>
       </div>
     </ThemeProvider>
