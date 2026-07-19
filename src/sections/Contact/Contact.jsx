@@ -8,7 +8,7 @@ const contactMethods = [
     icon: FiMail,
     label: 'Email',
     value: 'kevinvelasquez2207@gmail.com',
-    href: 'mailto:kevinvelasquez2207@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=kevinvelasquez2207@gmail.com',
   },
   {
     icon: FiLinkedin,

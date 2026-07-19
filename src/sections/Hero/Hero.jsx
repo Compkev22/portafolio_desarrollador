@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { FiDownload } from 'react-icons/fi';
 import profileImg from '../../assets/images/profile.png';
 
 const roles = ['Desarrollador Full Stack', 'Desarrollador Frontend', 'Desarrollador Backend'];
@@ -90,6 +91,14 @@ export default function Hero() {
               className="px-8 py-3 rounded-full bg-surface-container-high border border-outline text-on-surface font-semibold transition-all duration-300 hover:bg-surface-container-high/80 hover:scale-105 shadow-[6px_6px_16px_rgba(0,0,0,0.15),-6px_-6px_16px_rgba(255,255,255,0.05)] dark:shadow-[6px_6px_16px_rgba(0,0,0,0.5),-6px_-6px_16px_rgba(255,255,255,0.03)]"
             >
               Contactarme
+            </a>
+            <a
+              href="/cv/kevin-velasquez-cv.pdf"
+              download="Kevin-Velasquez-CV.pdf"
+              className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-surface-container-high border border-outline text-on-surface font-semibold transition-all duration-300 hover:bg-surface-container-high/80 hover:scale-105 shadow-[6px_6px_16px_rgba(0,0,0,0.15),-6px_-6px_16px_rgba(255,255,255,0.05)] dark:shadow-[6px_6px_16px_rgba(0,0,0,0.5),-6px_-6px_16px_rgba(255,255,255,0.03)]"
+            >
+              <FiDownload size={18} />
+              Descargar CV
             </a>
           </div>
         </motion.div>
