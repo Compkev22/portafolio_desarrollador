@@ -22,7 +22,7 @@ const socials = [
   },
   {
     icon: FiLinkedin,
-    href: null,
+    href: 'https://www.linkedin.com/in/kevin-velasquez-dev/',
     label: 'LinkedIn',
   },
 ];

@@ -13,8 +13,8 @@ const contactMethods = [
   {
     icon: FiLinkedin,
     label: 'LinkedIn',
-    value: 'Próximamente',
-    href: null,
+    value: 'kevin-velasquez-dev',
+    href: 'https://www.linkedin.com/in/kevin-velasquez-dev/',
   },
   {
     icon: FiGithub,
