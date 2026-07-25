@@ -53,7 +53,7 @@ export default function About() {
               </div>
               <div className="min-w-0">
                 <p className="text-sm text-on-surface-variant font-label">{d.label}</p>
-                <p className="text-on-surface font-semibold truncate">{d.value}</p>
+                <p className="text-on-surface font-semibold leading-snug">{d.value}</p>
               </div>
             </div>
           ))}
