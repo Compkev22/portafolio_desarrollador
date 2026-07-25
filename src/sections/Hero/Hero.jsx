@@ -76,7 +76,7 @@ export default function Hero() {
           </h2>
 
           <p className="mt-6 text-lg text-on-surface-variant max-w-lg border-l-4 border-primary pl-4">
-            Convierto problemas reales en sistemas que funcionan, de principio a fin.
+            Programar no se trata de lo que ya sabes, sino de lo que eres capaz de averiguar.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

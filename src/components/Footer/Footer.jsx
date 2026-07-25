@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="text-center md:text-left">
           <p className="text-lg font-semibold font-display text-on-surface">Kevin Velásquez</p>
           <p className="text-sm text-on-surface-variant mt-1">
-            Convierto problemas reales en sistemas que funcionan, de principio a fin.
+            Programar no se trata de lo que ya sabes, sino de lo que eres capaz de averiguar.
           </p>
         </div>
 

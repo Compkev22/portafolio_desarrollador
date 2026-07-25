@@ -8,7 +8,7 @@ const colorClasses = {
 
 const datos = [
   { icon: FiUser, label: 'Nombre', value: 'Kevin Velásquez', color: 'primary' },
-  { icon: FiCalendar, label: 'Edad', value: '18 años', color: 'secondary' },
+  { icon: FiCalendar, label: 'Edad', value: '19 años', color: 'secondary' },
   { icon: FiMapPin, label: 'Ubicación', value: 'Guatemala', color: 'primary' },
   { icon: FiMail, label: 'Email', value: 'kevinvelasquez2207@gmail.com', color: 'secondary' },
   { icon: FiCode, label: 'Programando desde', value: 'hace más de 2 años', color: 'primary' },
@@ -32,7 +32,7 @@ export default function About() {
             Sobre mí
           </h2>
           <p className="text-on-surface-variant text-lg leading-relaxed relative z-10">
-            Soy un desarrollador en constante aprendizaje, siempre buscando adaptarme a las nuevas tecnologías para no quedarme atrás. Disfruto convertir ideas en proyectos web completos — desde el frontend y el backend hasta el diseño de la base de datos — llevándolas de principio a fin.
+            Soy un desarrollador en constante aprendizaje, siempre buscando adaptarme a las nuevas tecnologías para estar a la vanguardia. Disfruto convertir ideas en proyectos web completos — desde el frontend y el backend hasta el diseño de la base de datos — llevándolas de principio a fin.
           </p>
         </motion.div>
 
