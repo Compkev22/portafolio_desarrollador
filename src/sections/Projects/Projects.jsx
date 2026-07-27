@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiShoppingBag, FiCreditCard, FiCode } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiShoppingBag, FiCreditCard, FiTool, FiCode } from 'react-icons/fi';
 import { projects } from '../../data/projects.js';
 import ProjectCarousel from '../../components/ProjectCarousel/ProjectCarousel.jsx';
 
 const projectIcons = {
   'kinal-fried-chicken': FiShoppingBag,
   'kinal-bank': FiCreditCard,
+  'workdispatch': FiTool,
 };
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, center }) {
   const Icon = projectIcons[project.id] ?? FiCode;
 
   return (
@@ -17,7 +18,9 @@ function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl overflow-hidden flex flex-col hover:scale-[1.01] transition-transform duration-500"
+      className={`group relative bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl overflow-hidden flex flex-col hover:scale-[1.01] transition-transform duration-500 ${
+        center ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''
+      }`}
     >
       <div className="h-1 w-full bg-gradient-to-r from-primary to-secondary" />
       <div className="absolute -bottom-16 -right-16 w-40 h-40 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/40 transition-colors duration-500" />
@@ -56,16 +59,21 @@ function ProjectCard({ project, index }) {
             rel="noreferrer"
             className="flex items-center gap-2 bg-surface-container-high border border-outline/20 text-on-surface px-5 py-2 rounded-full text-sm font-label hover:bg-surface-container-highest transition-colors"
           >
-            <FiGithub size={16} /> Repositorio
+            <FiGithub size={16} />
+            Repositorio
           </a>
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 bg-primary/20 border border-primary/50 text-primary px-5 py-2 rounded-full text-sm font-label hover:bg-primary/30 transition-colors shadow-[0_0_10px_rgba(124,58,237,0.2)]"
-          >
-            <FiExternalLink size={16} /> Ver Demo
-          </a>
+
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 bg-primary/20 border border-primary/50 text-primary px-5 py-2 rounded-full text-sm font-label hover:bg-primary/30 transition-colors shadow-[0_0_10px_rgba(124,58,237,0.2)]"
+            >
+              <FiExternalLink size={16} />
+              Ver Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
@@ -98,7 +106,12 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={i}
+              center={i === projects.length - 1 && projects.length % 2 !== 0}
+            />
           ))}
         </div>
       </div>

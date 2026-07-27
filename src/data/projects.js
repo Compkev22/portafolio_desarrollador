@@ -4,6 +4,9 @@ import menuRestaurante from '../assets/images/Menu Restaurante.png';
 import loginBanco from '../assets/images/Login Banco.png';
 import cuentasBanco from '../assets/images/Cuentas Banco.png';
 import tarjetasBanco from '../assets/images/Tarjetas Banco.png';
+import loginWorkDispatch from '../assets/images/Login WorkDispatch.png';
+import clienteWorkDispatch from '../assets/images/Panel Cliente Workdispatch.png';
+import trabajadorWorkDispatch from '../assets/images/panel Trabajador WorkDispatch.png';
 
 export const projects = [
   {
@@ -25,5 +28,15 @@ export const projects = [
     images: [loginBanco, cuentasBanco, tarjetasBanco],
     repoUrl: 'https://github.com/orgs/KinalBank/repositories',
     demoUrl: 'https://client-user-bank-system.vercel.app/',
+  },
+  {
+    id: 'workdispatch',
+    title: 'WorkDispatch',
+    description:
+      'Plataforma tipo inDrive para trabajos informales en Guatemala (plomeros, albañiles y oficios similares), que conecta clientes con trabajadores evitando la desconfianza de contratar a alguien desconocido sin referencias.',
+    technologies: ['React', 'Node.js', 'Express', '.NET', 'PostgreSQL', 'MongoDB'],
+    images: [loginWorkDispatch, clienteWorkDispatch, trabajadorWorkDispatch],
+    repoUrl: 'https://github.com/milian-rm/workdispatch_client_user.git',
+    demoUrl: null,
   },
 ];
