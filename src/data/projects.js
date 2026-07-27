@@ -16,7 +16,7 @@ export const projects = [
       'Proyecto de gestión de restaurantes, tanto para la parte administrativa como para los clientes, con acceso a menú, usuarios y método de autenticación.',
     technologies: ['Node.js', 'Express', 'React', 'React Native', 'PostgreSQL', 'MongoDB'],
     images: [loginRestaurante, inicioRestaurante, menuRestaurante],
-    repoUrl: 'https://github.com/Compkev22/Client-User-Restaurante.git',
+    repoUrl: 'https://github.com/restaurantSystemKFC',
     demoUrl: 'https://kinal-fried-chicken-user.web.app/login',
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
       'Plataforma tipo inDrive para trabajos informales en Guatemala (plomeros, albañiles y oficios similares), que conecta clientes con trabajadores evitando la desconfianza de contratar a alguien desconocido sin referencias.',
     technologies: ['React', 'Node.js', 'Express', '.NET', 'PostgreSQL', 'MongoDB'],
     images: [loginWorkDispatch, clienteWorkDispatch, trabajadorWorkDispatch],
-    repoUrl: 'https://github.com/milian-rm/workdispatch_client_user.git',
+    repoUrl: 'https://github.com/ProjectWorkDispatch',
     demoUrl: null,
   },
 ];
